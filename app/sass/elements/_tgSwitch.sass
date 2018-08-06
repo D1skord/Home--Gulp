@@ -1,0 +1,59 @@
+.tgSwitch
+    &__toggle
+        transition: all 1s
+        position: relative
+        display: block
+        cursor: pointer
+        -webkit-tap-highlight-color: transparent
+        transform: translate3d(0,0,0)
+        width: 133px
+        height: 50px
+        background: #393A59
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
+        border-radius: 100px
+        span
+            position: absolute
+            top: 4px
+            left: 4px
+            display: block
+            background: white
+            border-radius: 10px
+            transition: all 1s
+            width: 42px
+            height: 42px
+            background: #FFFFFF
+            box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
+            border-radius: 100px
+    &__toggle:after
+        position: absolute
+        display: block
+        top: 4px
+        left: 67px
+        width: 52px
+        height: 45px
+        content: url(../img/tgSwitch/moonIcon.svg)
+        transition: all 2s
+        z-index: -1
+    &__toggle:before
+        position: absolute
+        display: none
+        top: 4px
+        left: 20px
+        width: 52px
+        height: 45px
+        content: url(../img/tgSwitch/dayIcon.svg)
+    input
+        display: none
+
+
+#cb:checked + .tgSwitch__toggle
+    &
+        background: primary-light
+        background: #ABCADD
+    &:before
+        display: block
+    &:after
+        display: none
+    span
+        background: primary
+        transform: translateX(83px)

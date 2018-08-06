@@ -1,0 +1,151 @@
+.tabs
+    width: 664px
+    height: 687px
+    .tabs__header
+        width: 426px
+        height: 50px
+        background: #FFFFFF
+        border: 1px solid #E4EAEE
+        box-sizing: border-box
+        border-radius: 100px
+        display: flex
+        justify-content: space-between
+    .tabs__tab
+        position: relative
+        width: 213px
+        height: 35px
+        display: flex
+        cursor: pointer
+        padding-top: 15px
+        justify-content: space-around
+    .tabs__body
+        background: green
+        margin-top: 30px
+        width: 664px
+        height: 646px
+        background: #FFFFFF
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.15)
+    .tabs__content
+        display: none
+    .active
+        background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
+        border-radius: 100px
+        color: #FFFFFF
+.content
+    &__item
+        display: flex
+        justify-content: space-between
+        padding-left: 40px
+        padding-right: 40px
+        margin-top: 20px
+        &__gendSwitcher
+            width: 426px
+            height: 50px
+            background: #FFFFFF
+            border: 1px solid #E4EAEE
+            box-sizing: border-box
+            border-radius: 100px
+        &__switcher
+            position: relative
+            display: flex
+            justify-content: space-between
+            &__gend
+                line-height: normal
+                font-size: 16px
+                color: #333333
+                z-index: 1
+                width: 213px
+                height: 50px
+                padding: 16px 71px
+            span:before
+                content: ""
+                position: absolute
+                left: 0px
+                top: 0px
+                width: 213px
+                height: 50px
+                background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
+                box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
+                border-radius: 100px
+                transition: all 1s
+    &__header
+        padding: 30px
+    .name
+        line-height: normal
+        font-size: 16px
+        color: #A1BBCD
+
+#gendCB
+    display: none
+#gendCB:checked + .content__item__switcher
+    span:before
+        transform: translateX(210px)
+.input
+    width: 426px
+    height: 50px
+    background: #FFFFFF
+    border: 1px solid #E4EAEE
+    box-sizing: border-box
+    border-radius: 100px
+    padding-left: 25px
+    -webkit-appearance: none
+.input:focus
+    outline: none
+    border: 1px solid #47A4F7
+    box-sizing: border-box
+    border-radius: 100px
+.button
+    outline: none !important
+    background: #EBEAEA
+    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
+    border-radius: 100px
+    &__reset
+        width: 209px
+        height: 50px
+    &__add
+        width: 341px
+        height: 50px
+        background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
+        color: #FFFFFF
+    &__filter
+        width: 341px
+        height: 50px
+        background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
+        color: #FFFFFF
+.button:focus
+    outline: none
+
+.radio
+    &__input
+        display: none
+    &__custom,
+    &__label
+        display: inline-block
+        vertical-align: middle
+        opacity: 0.2
+    &__custom
+        width: 25px
+        height: 25px
+        position: relative
+        background: #FFFFFF
+        border: 1px solid #E4EAEE
+        box-sizing: border-box
+        border-radius: 100px
+    &__input:checked + &__label::before
+        opacity: 1
+    &__input:checked + &__custom::before
+        content: ""
+        display: block
+        position: absolute
+        top: 2px
+        right: 2px
+        bottom: 2px
+        left: 2px
+        border-radius: 2px
+        background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
+    &__custom,
+    &__input:checked + &__custom::before
+        border-radius: 50%
+

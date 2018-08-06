@@ -1,4 +1,5 @@
 window.onload = function () {
+    tgSwitch();
     document.querySelector('.tabs__header').addEventListener('click', fTabs);
     document.querySelector('.tgSwitch').addEventListener('click', tgSwitch);
 
@@ -23,18 +24,29 @@ window.onload = function () {
         }
     }
 
-    function tgSwitch(event) {
-        var cb = document.querySelector('.cb');
-        var slider = document.querySelector('.tgSwitch__slider');
-        if (cb.checked == false) {
-            cb.setAttribute('checked', true);
-            slider.setAttribute("style", "-webkit-transform: translateX(91px)");
+    function tgSwitch() {
+        var floors = document.getElementsByClassName('home__floor');
+        var windows = document.getElementsByClassName('home__window');
+        if (document.querySelector('#cb').checked == true) {
+            document.querySelector('.home').style.background = 'url(../app/img/home/dayFoundation.jpg) no-repeat';
+            for (let i = 0; i < floors.length; i++) {
+                floors[i].style.background = 'url(../app/img/home/dayFloor.jpg) no-repeat';
+            }
+            for (let i = 0; i < windows.length; i++) {
+                windows[i].style.border = '5px solid #613007';
+            }
         } else {
-            slider.setAttribute("style", "-webkit-transform: translateX(0px)");
-            cb.setAttribute('checked', false);
+            document.querySelector('.home').style.background = 'url(../app/img/home/moonFoundation.jpg) no-repeat';
+            for (let i = 0; i < floors.length; i++) {
+                floors[i].style.background = 'url(../app/img/home/moonFloor.jpg) no-repeat';
+            }
+            for (let i = 0; i < windows.length; i++) {
+                windows[i].style.border = '5px solid #3E3FC4';
+            }
         }
     }
 }
+
 
 
 
