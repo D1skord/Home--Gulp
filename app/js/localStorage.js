@@ -1,0 +1,6 @@
+const home = [];
+
+var inhabitant = {
+
+}
+

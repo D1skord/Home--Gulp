@@ -1,6 +1,4 @@
 .tabs
-    width: 664px
-    height: 687px
     .tabs__header
         width: 426px
         height: 50px
@@ -21,8 +19,6 @@
     .tabs__body
         background: green
         margin-top: 30px
-        width: 664px
-        height: 646px
         background: #FFFFFF
         box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.15)
     .tabs__content
@@ -33,54 +29,90 @@
         border-radius: 100px
         color: #FFFFFF
 .content
-    &__item
-        display: flex
-        justify-content: space-between
-        padding-left: 40px
-        padding-right: 40px
-        margin-top: 20px
-        &__gendSwitcher
-            width: 426px
-            height: 50px
-            background: #FFFFFF
-            border: 1px solid #E4EAEE
-            box-sizing: border-box
-            border-radius: 100px
-        &__switcher
-            position: relative
+    &__header
+        padding: 3px 35px
+        border-bottom: 1px solid #EAECF0
+    &__body
+        &__item
             display: flex
             justify-content: space-between
-            &__gend
+            padding-left: 40px
+            padding-right: 40px
+            margin-top: 20px
+            &__name
                 line-height: normal
                 font-size: 16px
-                color: #333333
-                z-index: 1
-                width: 213px
+                color: #A1BBCD
+            &__gendSwitcher
+                display: flex
+                justify-content: space-between
+            &__addit
+                width: 426px
                 height: 50px
-                padding: 16px 71px
-            span:before
-                content: ""
-                position: absolute
-                left: 0px
-                top: 0px
-                width: 213px
-                height: 50px
-                background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
-                box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
-                border-radius: 100px
-                transition: all 1s
-    &__header
-        padding: 30px
-    .name
-        line-height: normal
-        font-size: 16px
-        color: #A1BBCD
+                display: flex
+                justify-content: space-between
+                user-select: none
+    &__footer
+        display: flex
+        justify-content: space-between
+        border-top: 1px solid #EAECF0
+        padding: 20px 20px
 
-#gendCB
-    display: none
-#gendCB:checked + .content__item__switcher
-    span:before
-        transform: translateX(210px)
+
+.gendSwitcher
+    width: 426px
+    height: 50px
+    background: #FFFFFF
+    border: 1px solid #E4EAEE
+    box-sizing: border-box
+    border-radius: 100px
+    &__input
+        display: none
+    &__label
+        width: 213px
+        height: 36px
+        border-radius: 100px
+        text-align: center
+        padding-top: 14px
+        font-size: 16px
+    &__input[type="radio"]:checked + &__label
+        background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
+        color: #FFFFFF
+
+.addit
+    &__input
+        display: none
+    &__label
+        position: relative
+        padding-left: 30px
+        opacity: 0.2
+        margin-top: 17px
+    &__label:before
+        content: ""
+        position: absolute
+        width: 25px
+        height: 25px
+        background: #FFFFFF
+        border: 1px solid #E4EAEE
+        box-sizing: border-box
+        left: 0px
+        top: -3px
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
+        border-radius: 100px
+    &__label:after
+        content: ""
+        position: absolute
+        left: 3px
+        top: 0px
+        width: 19px
+        height: 19px
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
+        border-radius: 100px
+    &__input[type="checkbox"]:checked + &__label:after
+        background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
+    &__input[type="checkbox"]:checked + &__label
+        opacity: 1
+
 .input
     width: 426px
     height: 50px
@@ -90,16 +122,28 @@
     border-radius: 100px
     padding-left: 25px
     -webkit-appearance: none
+.input:hover
+    border: 1px solid #47A4F7
+    box-sizing: border-box
 .input:focus
     outline: none
     border: 1px solid #47A4F7
     box-sizing: border-box
     border-radius: 100px
+
+.c-box
+    background-image: url('../img/Vector.svg')
+    background-position: right center
+    background-repeat: no-repeat
+    padding-right: 15px
+    background-position-x: 379px
+
 .button
-    outline: none !important
     background: #EBEAEA
     box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
     border-radius: 100px
+    text-decoration: none
+    border: 0
     &__reset
         width: 209px
         height: 50px
@@ -108,44 +152,13 @@
         height: 50px
         background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
         color: #FFFFFF
-    &__filter
+    &__reset-filter
         width: 341px
         height: 50px
-        background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
-        color: #FFFFFF
+        margin: 0 auto
 .button:focus
     outline: none
+.button:active
+    opacity: 0.7
 
-.radio
-    &__input
-        display: none
-    &__custom,
-    &__label
-        display: inline-block
-        vertical-align: middle
-        opacity: 0.2
-    &__custom
-        width: 25px
-        height: 25px
-        position: relative
-        background: #FFFFFF
-        border: 1px solid #E4EAEE
-        box-sizing: border-box
-        border-radius: 100px
-    &__input:checked + &__label::before
-        opacity: 1
-    &__input:checked + &__custom::before
-        content: ""
-        display: block
-        position: absolute
-        top: 2px
-        right: 2px
-        bottom: 2px
-        left: 2px
-        border-radius: 2px
-        background: linear-gradient(180deg, #48A8F6 0%, #4288FA 100%)
-        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05)
-    &__custom,
-    &__input:checked + &__custom::before
-        border-radius: 50%
 
