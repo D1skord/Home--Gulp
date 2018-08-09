@@ -53,7 +53,7 @@
                             <div class="tabs__tab" data-tab="1">Фильтр</div>
                         </div>
                         <div class="tabs__body">
-                            <form id="form1" action="#">
+                            <form id="form1">
                                 <div class="tabs__content content" style="display: block">
                                     <div class="content__header">
                                         <h2 class="content__header__name">Добавить жителя</h2>
@@ -80,7 +80,7 @@
                                             <div class="content__body__item">
                                                 <p class="content__body__item__name">Кол-во комнат</p>
                                                 <select class="input c-box" name="numbRooms">
-                                                    <option>Выбрать</option>
+                                                    <option value="" hidden>Выбрать</option>
                                                     <option>1 комната</option>
                                                     <option>2 комнаты</option>
                                                     <option>3 комнаты</option>
@@ -102,7 +102,7 @@
                                             <div class="content__body__item">
                                                 <p class="content__body__item__name">Сколько человек<br>проживает</p>
                                                 <select class="input c-box" name="numbPersons">
-                                                    <option>Выбрать</option>
+                                                    <option value="" hidden>Выбрать</option>
                                                     <option>1 человек</option>
                                                     <option>2 человека</option>
                                                     <option>3 человека</option>
@@ -128,6 +128,10 @@
                                     </div>
                                     <div class="content__body">
                                         <div class="content__body__item">
+                                                <p class="content__body__item__name">Имя</p>
+                                                <input class="input required" value="" name="name">
+                                        </div>
+                                        <div class="content__body__item">
                                             <p class="content__body__item__name">Пол</p>
                                             <div class="content__body__item__gendSwitcher gendSwitcher">
                                                 <input class="gendSwitcher__input" type="radio" name="gender-F" id="male-F" checked>
@@ -139,8 +143,8 @@
                                         </div>
                                         <div class="content__body__item">
                                             <p class="content__body__item__name">Кол-во комнат</p>
-                                            <select class="input c-box">
-                                                <option>Выбрать</option>
+                                            <select class="input c-box" name="numbRooms">
+                                                <option value="" hidden>Выбрать</option>
                                                 <option>1 комната</option>
                                                 <option>2 комнаты</option>
                                                 <option>3 комнаты</option>
@@ -149,13 +153,13 @@
                                         <div class="content__body__item">
                                             <p class="content__body__item__name">Дополнительно</p>
                                             <div class="content__body__item__addit addit">
-                                                <input class="addit__input" type="checkbox" name="addit" id="pets-F">
+                                                <input class="addit__input" type="checkbox" name="pets" id="pets-F">
                                                 <label class="addit__label" for="pets-F">Домашние животные</label>
 
-                                                <input class="addit__input" type="checkbox" name="addit" id="tv-F">
+                                                <input class="addit__input" type="checkbox" name="tv" id="tv-F">
                                                 <label class="addit__label" for="tv-F">ТВ</label>
 
-                                                <input class="addit__input" type="checkbox" name="addit" id="internet-F">
+                                                <input class="addit__input" type="checkbox" name="internet" id="internet-F">
                                                 <label class="addit__label" for="internet-F">Интернет</label>
                                             </div>
                                         </div>

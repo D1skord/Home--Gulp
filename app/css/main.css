@@ -22,7 +22,7 @@
     margin-left: 46px; }
   .home__window:hover {
     cursor: pointer;
-    border: 5px solid yellow; }
+    border: 5px solid black; }
 
 .tabs .tabs__header {
   width: 426px;
@@ -42,6 +42,7 @@
   padding-top: 15px;
   justify-content: space-around; }
 .tabs .tabs__body {
+  width: 664px;
   background: green;
   margin-top: 30px;
   background: #FFFFFF;
@@ -80,7 +81,8 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #EAECF0;
-  padding: 20px 20px; }
+  padding: 20px 20px;
+  margin-top: 20px; }
 
 .gendSwitcher {
   width: 426px;
