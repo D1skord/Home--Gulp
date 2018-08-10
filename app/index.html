@@ -13,29 +13,29 @@
             <div class="home_wrapper">
                 <div class="home">
                     <div class="home__floor">
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
+                        <div class="home__floor__window" data-winNum="5,1"></div>
+                        <div class="home__floor__window" data-winNum="5,2"></div>
+                        <div class="home__floor__window" data-winNum="5,3"></div>
                     </div>
                     <div class="home__floor">
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
+                        <div class="home__floor__window" data-winNum="4,1"></div>
+                        <div class="home__floor__window" data-winNum="4,2"></div>
+                        <div class="home__floor__window" data-winNum="4,3"></div>
                     </div>
                     <div class="home__floor">
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
+                        <div class="home__floor__window" data-winNum="3,1"></div>
+                        <div class="home__floor__window" data-winNum="3,2"></div>
+                        <div class="home__floor__window" data-winNum="3,3"></div>
                     </div>
                     <div class="home__floor">
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
+                        <div class="home__floor__window" data-winNum="2,1"></div>
+                        <div class="home__floor__window" data-winNum="2,2"></div>
+                        <div class="home__floor__window" data-winNum="2,3"></div>
                     </div>
                     <div class="home__floor">
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
-                        <div class="home__window"></div>
+                        <div class="home__floor__window" data-winNum="1,1"></div>
+                        <div class="home__floor__window" data-winNum="1,2"></div>
+                        <div class="home__floor__window" data-winNum="1,3"></div>
                     </div>
                 </div>
                 <div class="tgSwitch">
@@ -53,7 +53,7 @@
                             <div class="tabs__tab" data-tab="1">Фильтр</div>
                         </div>
                         <div class="tabs__body">
-                            <form id="form1">
+                            <form id="form1" onsubmit="return false;">
                                 <div class="tabs__content content" style="display: block">
                                     <div class="content__header">
                                         <h2 class="content__header__name">Добавить жителя</h2>
@@ -79,11 +79,11 @@
                                             </div>
                                             <div class="content__body__item">
                                                 <p class="content__body__item__name">Кол-во комнат</p>
-                                                <select class="input c-box" name="numbRooms">
-                                                    <option value="" hidden>Выбрать</option>
-                                                    <option>1 комната</option>
-                                                    <option>2 комнаты</option>
-                                                    <option>3 комнаты</option>
+                                                <select class="input c-box required" name="numbRooms">
+                                                    <option value="dis" hidden disabled selected>Выбрать</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
                                                 </select>
                                             </div>
                                             <div class="content__body__item">
@@ -101,22 +101,19 @@
                                             </div>
                                             <div class="content__body__item">
                                                 <p class="content__body__item__name">Сколько человек<br>проживает</p>
-                                                <select class="input c-box" name="numbPersons">
-                                                    <option value="" hidden>Выбрать</option>
-                                                    <option>1 человек</option>
-                                                    <option>2 человека</option>
-                                                    <option>3 человека</option>
-                                                    <option>4 человека</option>
-                                                    <option>5 человек</option>
-                                                    <option>6 человек</option>
-                                                    <option>7 человек</option>
+                                                <select class="input c-box required" name="numbPersons">
+                                                    <option value="dis" hidden disabled selected>Выбрать</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
                                                 </select>
                                             </div>
                                     </div>
                                     <div class="content__footer">
                                         <button class="button button__reset" type="Reset">Сбросить</button>
-                                        <button class="button button__add" >Добавить</button>
-                                        <button class="button button__del" >Удалить</button>
+                                        <button class="button button__add" onsubmit="return false">Добавить</button>
                                     </div>
 
                                 </div>
@@ -144,10 +141,10 @@
                                         <div class="content__body__item">
                                             <p class="content__body__item__name">Кол-во комнат</p>
                                             <select class="input c-box" name="numbRooms">
-                                                <option value="" hidden>Выбрать</option>
-                                                <option>1 комната</option>
-                                                <option>2 комнаты</option>
-                                                <option>3 комнаты</option>
+                                                <option value="dis" hidden disabled selected>Выбрать</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
                                             </select>
                                         </div>
                                         <div class="content__body__item">
@@ -165,7 +162,7 @@
                                         </div>
                                         <div class="content__body__item">
                                             <p class="content__body__item__name">Этаж</p>
-                                            <input class="input" value="">
+                                            <input class="input" value="" name="floor">
                                         </div>
                                     </div>
                                     <div class="content__footer">
@@ -176,8 +173,70 @@
                         </div>
                     </div>
                 </div>
+                <div class="popup">
+                    <div class="popup__header">
+                        <div class="popup__header__name">
+                            Алексей Иванов
+                        </div>
+                        <div class="popup__header__icon">
+
+                        </div>
+                        <div class="popup__header__close">
+
+                        </div>
+                    </div>
+                    <div class="popup__body">
+                        <div class="popup__body__item">
+                            <div class="pupup__body__item__name">
+                                Пол
+                            </div>
+                            <div class="pupup__body__item__value" name="gender">
+
+                            </div>
+                        </div>
+                        <div class="popup__body__item">
+                            <div class="pupup__body__item__name">
+                                Количество комнат
+                            </div>
+                            <div class="pupup__body__item__value" name="numbRooms">
+
+                            </div>
+                        </div>
+                        <div class="popup__body__item">
+                            <div class="pupup__body__item__name">
+                                Сколько человек проживает
+                            </div>
+                            <div class="pupup__body__item__value" name="numbPersons">
+
+                            </div>
+                        </div>
+                        <div class="popup__body__item">
+                            <div class="pupup__body__item__name">
+                                Этаж
+                            </div>
+                            <div class="pupup__body__item__value" name="floor">
+
+                            </div>
+                        </div>
+                        <div class="popup__body__item">
+                            <div class="pupup__body__item__name">
+                                Дополнительно
+                            </div>
+                            <div class="pupup__body__item__value" name="addit">
+
+                            </div>
+                        </div>
+                        <div class="popup__body__item">
+                            <button class="button button__person-delete">Выселить!</button>
+                        </div>
+                    </div>
+                </div>
             </div>
     </section>
+    <script src="js/tgSwitch.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/localStorage.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/tabs.js"></script>
 </body>
 </html>

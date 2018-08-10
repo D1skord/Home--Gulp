@@ -1,14 +1,11 @@
 var gulp = require('gulp'),//подключение модуля
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglifyjs'),
+
     del = require('del'),
     imageMin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     cache = require('gulp-cache');
-
-
 
 gulp.task('sass', function() {
     return gulp.src('app/sass/**/*.sass')
