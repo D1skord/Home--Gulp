@@ -21,6 +21,7 @@ function tabs(event) {
             document.getElementById('form1').reset();
         } else {
             document.getElementById('form2').reset();
+            change();
         }
     }
 }

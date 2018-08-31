@@ -124,25 +124,25 @@ function loadFilterHouse(filterHouse) {
 clearHome();
     var floors = document.getElementsByClassName('home__floor');
 
-        houseHtml[0] = floors[0].getElementsByClassName('home__floor__window');
-        //каждому этажу houseHtml добавляем массив окон
-        for (let i = 1; i < house.length; i++) {
-            houseHtml.push(floors[i].getElementsByClassName('home__floor__window'));
-        }
+    houseHtml[0] = floors[0].getElementsByClassName('home__floor__window');
+    //каждому этажу houseHtml добавляем массив окон
+    for (let i = 1; i < house.length; i++) {
+        houseHtml.push(floors[i].getElementsByClassName('home__floor__window'));
+    }
 
-        for (let i = 0; i < filterHouse.length; i++) {
-            for (let j = 0; j < 3; j++) {
-                if(filterHouse[i][j]) {
-                    if (filterHouse[i][j].gender) {
-                        houseHtml[i][j].setAttribute(
-                            "style", "background-image: url('img/home/boy.jpg'); background-repeat: no-repeat; background-position: right center; background-position-x: 20px; border = 5px solid #613007;");
-                    } else {
-                        houseHtml[i][j].setAttribute(
-                            "style", "background-image: url('img/home/girl.jpg'); background-repeat: no-repeat; background-position: right center; border = 5px solid #613007;");
-                    }
+    for (let i = 0; i < filterHouse.length; i++) {
+        for (let j = 0; j < 3; j++) {
+            if(filterHouse[i][j]) {
+                if (filterHouse[i][j].gender) {
+                    houseHtml[i][j].setAttribute(
+                        "style", "background-image: url('img/home/boy.jpg'); background-repeat: no-repeat; background-position: right center; background-position-x: 20px; border = 5px solid #613007;");
+                } else {
+                    houseHtml[i][j].setAttribute(
+                        "style", "background-image: url('img/home/girl.jpg'); background-repeat: no-repeat; background-position: right center; border = 5px solid #613007;");
                 }
             }
         }
+    }
 
     var windows = document.getElementsByClassName('home__floor__window');
     if (tgSwitch) {
@@ -195,6 +195,12 @@ function change(event) {
 //срваниваем 2 объекта
 function compr(obj1, obj2) {
     var bool = true;
+
+    if(obj2.name == '') {
+        if(obj1.gender == obj2.gender) return true;
+    } else {
+        if(obj1.name == obj2.name && obj1.gender == obj2.gender) return true;
+    }
     if (obj1.name != obj2.name && obj2.name != '') return false;
     if (obj1.gender != obj2.gender) return false;
     if (obj1.numbRooms != obj2.numbRooms && obj2.numbRooms != 'dis') return false;
