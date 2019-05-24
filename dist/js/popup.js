@@ -28,18 +28,18 @@ function popap(event) {
         //если true, то мужская иконка и пол
         if (room.gender) {
             popup.querySelector('.popup__header__icon').style.backgroundImage = "url('../img/home/boy.jpg')";
-            popup.querySelector('div[name="gender"]').innerHTML = 'Мужской';
+            popup.querySelector('div[name="gender"]').innerHTML = 'Male';
         } else {
             popup.querySelector('.popup__header__icon').style.backgroundImage = "url('../img/home/girl.jpg')";
-            popup.querySelector('div[name="gender"]').innerHTML = 'Женский';
+            popup.querySelector('div[name="gender"]').innerHTML = 'Female';
         }
         popup.querySelector('div[name="numbRooms"]').innerHTML = room.numbRooms;
         popup.querySelector('div[name="numbPersons"]').innerHTML = room.numbPersons;
         popup.querySelector('div[name="floor"]').innerHTML = room.floor;
         var addit = "";//строка для доп инфы
-        if (room.pets) { addit += 'Домашние животные, ' }
-        if (room.tv) { addit += 'ТВ, ' }
-        if (room.internet) { addit += 'Интернет, ' }
+        if (room.pets) { addit += 'Pets, ' }
+        if (room.tv) { addit += 'TV, ' }
+        if (room.internet) { addit += 'Internet, ' }
 
         //Если строка не пустая, то убираем запятую в конце иначе '-'
         if (addit) {
@@ -66,6 +66,6 @@ function personDel(event) {
         var serialHouse = JSON.stringify(house);
 
         localStorage.setItem("House", serialHouse);
-        alert('Выселен!');
+        alert('Complete!');
         location.reload();
 }

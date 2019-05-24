@@ -70,7 +70,7 @@ function save() {
 
     //если этаж введен некорректно
     if ((parseInt(Owner.floor, 10) <= 0) || (parseInt(Owner.floor, 10) > house.length) || isNaN(parseInt(Owner.floor, 10)) ) {
-        alert('Такого этажа нет!');
+        alert('Floor is missing!');
         return;
     }
 
@@ -81,7 +81,7 @@ function save() {
         }
     }
     if(!tmp) {
-        alert('Этаж занят!');
+        alert('Busy!');
         return;
     }
 
@@ -101,7 +101,7 @@ function save() {
 
     localStorage.setItem("House", serialHouse);
 
-alert('Житель добавлен!');
+alert('Complete!');
 location.reload();
 }
 
